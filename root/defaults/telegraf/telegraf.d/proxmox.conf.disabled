@@ -1,0 +1,3 @@
+# Gather metrics from proxmox based on what is in /etc/pve/setup.cfg
+[[inputs.socket_listener]]
+service_address = "udp://:8086"

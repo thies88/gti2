@@ -1,3 +1,26 @@
+# InfluxDBv2 config file
+# https://docs.influxdata.com/influxdb/v2.1/reference/config-options
+
+# Number of queries allowed to execute concurrently.
+query-concurrency: 20
+
+# Maximum number of queries allowed in execution queue. When queue limit is reached, new queries are rejected.
+query-queue-size: 15
+
+# Specifies the data store for secrets such as passwords and tokens. Store secrets in either the InfluxDB internal: BoltDB or in: Vault
+secret-store: vault
+
+# Specifies the Time to Live (TTL) in minutes for newly created user sessions.
+session-length: 120
+
+# Path to TLS certificate file. Requires the tls-key to be set.
 tls-cert: /config/keys/cert.crt
 tls-key: /config/keys/cert.key
+
+# Port for the NATS streaming server. -1 selects a random port.
 nats-port: 4222
+
+# enable UDP: remember to forward port 8086/udp for container also
+#INFLUXDB_UDP_DATABASE: udp
+#INFLUXDB_UDP_ENABLED: true
+#INFLUXDB_UDP_BIND_ADDRESS: 0.0.0.0:8086
