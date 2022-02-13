@@ -4,6 +4,10 @@ Grafana
 Telegraf
 Influxdb v2
 
+delete default scraper created in influxdbv2 WebGui to prevent: error="Get \"https://xxx.xxxx.xxx.xxx:8086/metrics\": x509: cannot validate certificate for xxx.xxx.xxx.xxxbecause it doesn't contain any IP SAN. Currently scrapers do not support self signed certs
+
+- Grafana: filter tags: ${__field.labels.tagname}
+
     Rebuilds new base image from scratch @https://partner-images.canonical.com/core/${REL}/current/ubuntu-${REL}-core-cloudimg-${ARCH}-root.tar.gz
         Base OS is updated
         Packages are updated
@@ -23,6 +27,7 @@ docker setup
 	  thies88/imagename
 
 After starting the container check log for instructions.
+
 
 update your container:
 
